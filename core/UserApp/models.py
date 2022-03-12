@@ -3,6 +3,7 @@ from django.contrib.auth.models import AbstractUser
 import json
 
 with open('fixtures/city.json') as f:
+    # Gets cities in json format and converts them to tuple format
     cities = json.load(f)
 cities = [(k, v) for k, v in cities.items()]
 
@@ -15,9 +16,15 @@ class ModelAddress(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name        = "Address"
+        verbose_name_plural = "Addresses"
+        db_table            = "Addresses"
+
+
 class ModelUser(AbstractUser):
-    avatar = models.ImageField(upload_to="Users",verbose_name="Profil Fotoğrafı",help_text="Profil Fotoğrafı",null=True,blank=True)
-    address= models.ManyToManyField(ModelAddress,verbose_name="Adresler",help_text="Adresler",blank=True,related_name="addrs")
+    avatar     = models.ImageField(upload_to="Users",verbose_name="Profil Fotoğrafı",help_text="Profil Fotoğrafı",null=True,blank=True)
+    address    = models.ManyToManyField(ModelAddress,verbose_name="Adresler",help_text="Adresler",blank=True,related_name="addrs")
 
     class Meta:
         verbose_name        = "User"

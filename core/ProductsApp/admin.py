@@ -9,6 +9,7 @@ class AdminProduct(admin.ModelAdmin):
     list_display_links = panelListForProduct
     search_fields      = panelListForProduct
     list_filter        = ["price"]
+    list_editable      = ["draft"]
     readonly_fields    = ["slug"]
     class Meta:
         model = ModelProduct
