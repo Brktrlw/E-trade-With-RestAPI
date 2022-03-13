@@ -3,9 +3,16 @@ from autoslug import AutoSlugField
 from django.utils.text import slugify
 from unidecode import unidecode
 
-class ModelProductCategory(models.Model):
-    name=models.CharField(max_length=100,verbose_name="Kategori",help_text="Kategori")
+class BaseProductModel(models.Model):
+    # Created a base class to avoid code duplication
+    name = models.CharField(max_length=200)
+    slug = AutoSlugField(populate_from="name",unique=True,help_text="Slug",verbose_name="Slug")
 
+    class Meta:
+        abstract=True
+
+class ModelProductCategory(BaseProductModel):
+    # The two fields (name and slug) come from the inherited (BaseProductModel) class.
     def __str__(self):
         return self.name
 
@@ -15,11 +22,16 @@ class ModelProductCategory(models.Model):
         db_table            = "ProductCategories"
 
 
-class ModelProduct(models.Model):
-    name        = models.CharField(max_length=200,verbose_name="Ürün",help_text="Ürün")
+class ModelProduct(BaseProductModel):
+    # The two fields (name and slug) come from the inherited (BaseProductModel) class.
     description = models.TextField(max_length=500,verbose_name="Detay",help_text="Detay")
-    slug        = AutoSlugField(populate_from="name",unique=True,help_text="Slug",verbose_name="Slug")
-    category    = models.ManyToManyField(ModelProductCategory,verbose_name="Kategori",help_text="Kategori",related_name="categs")
+    category    = models.ManyToManyField(
+        ModelProductCategory,
+        verbose_name="Kategori",
+        help_text="Kategori",
+        related_name="categs",
+        related_query_name="cats"
+    )
     image       = models.ImageField(upload_to="Products",verbose_name="Görsel",help_text="Görsel")
     draft       = models.BooleanField(default=True,verbose_name="Taslak",help_text="Taslak")
     price       = models.FloatField(verbose_name="Fiyat",help_text="Fiyat")
