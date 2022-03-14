@@ -18,10 +18,11 @@ class AdminProduct(admin.ModelAdmin):
 
 @admin.register(ModelProductCategory)
 class AdminProductCategory(admin.ModelAdmin):
-    list_display    = ["id"]+panelListForProduct
-    search_fields   = panelListForProduct
-    readonly_fields = ["slug"]
-    list_editable   = ["name"]
+    list_display       = ["id"]+panelListForProduct
+    search_fields      = panelListForProduct
+    list_display_links = ["slug"]
+    readonly_fields    = ["slug"]
+    list_editable      = ["name"]
 
     class Meta:
         model = ModelProductCategory

@@ -8,11 +8,18 @@ class BaseProductModel(models.Model):
     name = models.CharField(max_length=200)
     slug = AutoSlugField(populate_from="name",unique=True,help_text="Slug",verbose_name="Slug")
 
+
     class Meta:
         abstract=True
 
 class ModelProductCategory(BaseProductModel):
     # The two fields (name and slug) come from the inherited (BaseProductModel) class.
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        field = self._meta.get_field('name')
+        field.verbose_name = 'Kategori Adı'
+        field.help_text    = "Kategori Adı"
+
     def __str__(self):
         return self.name
 
@@ -43,6 +50,12 @@ class ModelProduct(BaseProductModel):
         if not self.id:
             self.slug = slugify(unidecode(self.name))
         super(ModelProduct, self).save(*args, **kwargs)
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        field = self._meta.get_field('name')
+        field.verbose_name = 'Ürün Adı'
+        field.help_text    = "Ürün Adı"
 
     class Meta:
         verbose_name        = "Product"
