@@ -42,10 +42,10 @@ INSTALLED_APPS = [
     "ProductsApp",
     "UserApp",
     "CommentApp",
+    "OrderApp",
     #3rd Party Apps
     'django_cleanup',
     "rest_framework"
-
 ]
 
 MIDDLEWARE = [
