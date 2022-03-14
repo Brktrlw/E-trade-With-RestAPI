@@ -1,6 +1,9 @@
 from django.contrib import admin
 from .models import ModelCart,ModelCartItem
 
+
+admin.site.register(ModelCart)
+
 @admin.register(ModelCartItem)
 class AdminCartItem(admin.ModelAdmin):
     list_display       = ["item","amount"]
@@ -10,3 +13,4 @@ class AdminCartItem(admin.ModelAdmin):
 
     class Meta:
         model = ModelCartItem
+

@@ -8,6 +8,10 @@ class ModelCart(models.Model):
     def __str__(self):
         return self.user.username
 
+    class Meta:
+        verbose_name        = "Cart"
+        verbose_name_plural = "Carts"
+        db_table            = "Cart"
 
 class ModelCartItem(models.Model):
     cart   = models.ForeignKey(ModelCart,on_delete=models.CASCADE,verbose_name="Sepet",help_text="Sepet")
