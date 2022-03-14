@@ -1,1 +1,4 @@
 env
+core/db.sqlite3
+*.sqlite3
+core/media/
