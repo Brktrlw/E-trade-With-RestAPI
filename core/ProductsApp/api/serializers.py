@@ -2,20 +2,28 @@ from rest_framework import serializers
 from ProductsApp.models import ModelProduct,ModelProductCategory
 
 class CategorySerializer(serializers.ModelSerializer):
-
     class Meta:
         model = ModelProductCategory
         fields=("name","slug")
 
 class ProductsSerializer(serializers.ModelSerializer):
-    image=serializers.SerializerMethodField()
-    url=serializers.HyperlinkedIdentityField(view_name="products:url_productDetail",lookup_field="slug")
+    image_url=serializers.SerializerMethodField(read_only=True)
+    url=serializers.HyperlinkedIdentityField(view_name="products:url_productDetail",lookup_field="slug",read_only=True)
     category=CategorySerializer(many=True)
 
-    def get_image(self, obj):
-        request = self.context.get('request')
-        return request.build_absolute_uri(obj.image.url)
+    def get_image_url(self, obj):
+        if obj.image:
+            request = self.context.get('request')
+            return request.build_absolute_uri(obj.image.url)
+        return None
 
     class Meta:
         model = ModelProduct
-        fields=["name","description","url","slug","image","price","category"]
+        fields=["name","description","url","slug","image_url","price","category"]
+
+class CreateProductSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = ModelProduct
+        fields=["name","description","image","price","category"]
+

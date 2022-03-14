@@ -1,5 +1,4 @@
 import uuid
-
 from django.db import models
 from UserApp.models import ModelUser,ModelAddress
 from ProductsApp.models import ModelProduct
