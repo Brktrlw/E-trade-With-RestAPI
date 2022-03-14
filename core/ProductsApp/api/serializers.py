@@ -21,7 +21,7 @@ class ProductsSerializer(serializers.ModelSerializer):
         model = ModelProduct
         fields=["name","description","url","slug","image_url","price","category"]
 
-class CreateProductSerializer(serializers.ModelSerializer):
+class CreateUpdateProductSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ModelProduct

@@ -1,7 +1,10 @@
 
 
 from django.urls import path
-from .views import AllProductListView,ListProductByCategory,DetailProductView,CreateProductView
+from .views import (AllProductListView,ListProductByCategory,
+                    DetailProductView,CreateProductView,
+                    DeleteProductView,UpdateProductView)
+
 
 app_name="products"
 urlpatterns = [
@@ -10,5 +13,7 @@ urlpatterns = [
     path("detail/<slug>",DetailProductView.as_view(),name="url_productDetail"),
 
     # FOR CRUD
-    path("create/",CreateProductView.as_view(),name="url_productCreate")
+    path("create/",CreateProductView.as_view(),name="url_productCreate"),
+    path("delete/<slug>",DeleteProductView.as_view(),name="url_productDelete"),
+    path("update/<slug>",UpdateProductView.as_view(),name="url_productUpdate")
 ]
