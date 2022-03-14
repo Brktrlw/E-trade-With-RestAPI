@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "UserApp",
     "CommentApp",
     "OrderApp",
+    "CartApp",
     #3rd Party Apps
     'django_cleanup',
     "rest_framework"
