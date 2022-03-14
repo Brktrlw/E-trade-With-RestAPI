@@ -16,9 +16,9 @@ class ModelProductCategory(BaseProductModel):
     # The two fields (name and slug) come from the inherited (BaseProductModel) class.
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        field = self._meta.get_field('name')
-        field.verbose_name = 'Kategori Adı'
-        field.help_text    = "Kategori Adı"
+        nameField = self._meta.get_field('name')
+        nameField.verbose_name = 'Kategori Adı'
+        nameField.help_text    = "Kategori Adı"
 
     def __str__(self):
         return self.name
@@ -37,7 +37,6 @@ class ModelProduct(BaseProductModel):
         verbose_name="Kategori",
         help_text="Kategori",
         related_name="categs",
-        related_query_name="cats"
     )
     image       = models.ImageField(upload_to="Products",verbose_name="Görsel",help_text="Görsel")
     draft       = models.BooleanField(default=True,verbose_name="Taslak",help_text="Taslak")
@@ -53,9 +52,9 @@ class ModelProduct(BaseProductModel):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        field = self._meta.get_field('name')
-        field.verbose_name = 'Ürün Adı'
-        field.help_text    = "Ürün Adı"
+        nameField = self._meta.get_field('name')
+        nameField.verbose_name = 'Ürün Adı'
+        nameField.help_text    = "Ürün Adı"
 
     class Meta:
         verbose_name        = "Product"

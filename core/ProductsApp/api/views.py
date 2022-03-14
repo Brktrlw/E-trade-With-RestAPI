@@ -1,9 +1,8 @@
-from rest_framework.generics import ListAPIView
-from ProductsApp.models import ModelProduct,ModelProductCategory
+from rest_framework.generics import ListAPIView,RetrieveAPIView
+from ProductsApp.models import ModelProduct
 from .serializers import ProductsSerializer
 
 class AllProductListView(ListAPIView):
-    # THIS CLASS JUST FOR TEST, IT IS NOT FOR PROD.
     serializer_class = ProductsSerializer
 
     def get_queryset(self):
@@ -15,3 +14,7 @@ class ListProductByCategory(ListAPIView):
     def get_queryset(self):
         return ModelProduct.objects.filter(draft=False,category__slug=self.kwargs.get("slug"))
 
+class DetailProductView(RetrieveAPIView):
+    queryset         = ModelProduct.objects.all()
+    lookup_field     = "slug"
+    serializer_class = ProductsSerializer
