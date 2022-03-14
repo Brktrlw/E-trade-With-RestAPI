@@ -8,7 +8,6 @@ class BaseProductModel(models.Model):
     name = models.CharField(max_length=200)
     slug = AutoSlugField(populate_from="name",unique=True,help_text="Slug",verbose_name="Slug")
 
-
     class Meta:
         abstract=True
 
@@ -38,9 +37,9 @@ class ModelProduct(BaseProductModel):
         help_text="Kategori",
         related_name="categs",
     )
-    image       = models.ImageField(upload_to="Products",verbose_name="Görsel",help_text="Görsel")
-    draft       = models.BooleanField(default=True,verbose_name="Taslak",help_text="Taslak")
-    price       = models.FloatField(verbose_name="Fiyat",help_text="Fiyat")
+    image = models.ImageField(upload_to="Products",verbose_name="Görsel",help_text="Görsel")
+    draft = models.BooleanField(default=True,verbose_name="Taslak",help_text="Taslak")
+    price = models.FloatField(verbose_name="Fiyat",help_text="Fiyat")
 
     def __str__(self):
         return f"{self.name} | {self.slug}"
