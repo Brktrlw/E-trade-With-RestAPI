@@ -9,6 +9,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("api/products/",include("ProductsApp.api.urls",namespace="products")),
     path("api/carts/",include("CartApp.api.urls",namespace="carts")),
+    path("api/comments/", include("CommentApp.api.urls", namespace="comments")),
 
     # For JWT
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),

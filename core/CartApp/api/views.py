@@ -1,6 +1,6 @@
-from rest_framework.generics import CreateAPIView, get_object_or_404,DestroyAPIView,UpdateAPIView,GenericAPIView
+from rest_framework.generics import CreateAPIView, get_object_or_404,DestroyAPIView,UpdateAPIView
 from CartApp.models import ModelCart,ModelCartItem
-from .serializers import CartSerializer,CartItemUpdateSerializer
+from .serializers import CartSerializer
 from ProductsApp.models import ModelProduct
 from rest_framework.permissions import IsAuthenticated
 
@@ -58,6 +58,7 @@ class DeleteProductFromCartView(DestroyAPIView):
 
 
 class UpdateCartItemAmountView(UpdateAPIView):
+
     queryset         = ModelCartItem.objects.all()
     serializer_class = CartSerializer
 
