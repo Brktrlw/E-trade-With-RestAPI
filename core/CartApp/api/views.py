@@ -19,6 +19,7 @@ class AddProductToCartView(CreateAPIView):
         else:
             serializer.save(cart=cart,item=product)
 
+
 class ReduceProductFromCartView(DestroyAPIView):
     queryset         = ModelCartItem.objects.all()
     serializer_class = CartSerializer
@@ -39,6 +40,17 @@ class ReduceProductFromCartView(DestroyAPIView):
 
 
 class DeleteProductFromCartView(DestroyAPIView):
-    pass
+    queryset = ModelCartItem.objects.all()
+    serializer_class = CartSerializer
+
+    def get_object(self):
+        product = get_object_or_404(ModelProduct, slug=self.kwargs.get("slug"))
+        return product
+
+    def perform_destroy(self, instance):
+        cart     = get_object_or_404(ModelCart,user=self.request.user)
+        product  = self.get_object()
+        cartItem = get_object_or_404(ModelCartItem,cart=cart, item=product)
+        cartItem.delete()
 
 

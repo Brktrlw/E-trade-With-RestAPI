@@ -6,7 +6,7 @@ class ModelCart(models.Model):
     user      = models.ForeignKey(ModelUser,on_delete=models.CASCADE,verbose_name="Kullanıcı",help_text="Kullanıcı")
 
     def __str__(self):
-        return self.user.username
+        return self.user.username + "'in sepeti."
 
     class Meta:
         verbose_name        = "Cart"
