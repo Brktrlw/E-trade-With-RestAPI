@@ -25,5 +25,5 @@ class CreateUpdateProductSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ModelProduct
-        fields=["name","description","image","price","category"]
+        fields=["name","description","image","price","category","draft"]
 

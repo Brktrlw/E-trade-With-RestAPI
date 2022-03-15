@@ -34,7 +34,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -133,7 +133,8 @@
       <workItem from="1647241701868" duration="816000" />
       <workItem from="1647245635502" duration="858000" />
       <workItem from="1647250113774" duration="364000" />
-      <workItem from="1647250753384" duration="15547000" />
+      <workItem from="1647250753384" duration="15923000" />
+      <workItem from="1647331360258" duration="6508000" />
     </task>
     <servers />
   </component>

@@ -13,6 +13,7 @@ class ModelCart(models.Model):
         verbose_name_plural = "Carts"
         db_table            = "Cart"
 
+
 class ModelCartItem(models.Model):
     cart   = models.ForeignKey(ModelCart,on_delete=models.CASCADE,verbose_name="Sepet",help_text="Sepet")
     item   = models.ForeignKey(ModelProduct,on_delete=models.CASCADE,verbose_name="Ürün",help_text="Ürün")
