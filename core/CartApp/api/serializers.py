@@ -13,3 +13,4 @@ class CartItemUpdateSerializer(serializers.ModelSerializer):
         model = ModelCartItem
         fields=("amount","slug")
 
+

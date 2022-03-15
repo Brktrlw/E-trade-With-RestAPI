@@ -57,18 +57,22 @@ class DeleteProductFromCartView(DestroyAPIView):
         cartItem.delete()
 
 
-class UpdateCartItemAmountView(GenericAPIView):
+class UpdateCartItemAmountView(UpdateAPIView):
     queryset         = ModelCartItem.objects.all()
-    serializer_class = CartItemUpdateSerializer
+    serializer_class = CartSerializer
+
+    def get_cart_product_cartItem(self):
+        cart     = get_object_or_404(ModelCart, user=self.request.user)
+        product  = get_object_or_404(ModelProduct, slug=self.kwargs.get("slug"))
+        cartItem = get_object_or_404(ModelCartItem, cart=cart, item=product)
+        return {"cart":cart,"product":product,"cartItem":cartItem}
 
     def get_object(self):
-        product = get_object_or_404(ModelProduct, slug=self.kwargs.get("slug"),draft=False)
-        return product
+        return self.get_cart_product_cartItem().get("cartItem")
 
     def perform_update(self, serializer):
-        cart     = get_object_or_404(ModelCart, user=self.request.user)
-        product  = get_object_or_404(ModelProduct,slug=serializer.validated_data.get("slug"))
-        cartItem = get_object_or_404(ModelCartItem, cart=cart, item=product)
+        cartItem = self.get_cart_product_cartItem().get("cartItem")
+
         if serializer.validated_data.get("amount")==0:
             cartItem.delete()
         elif serializer.validated_data.get("amount")<0:
