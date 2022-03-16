@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="91c9dc9e-3d0f-4ff8-89de-054339761953" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CommentApp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/CommentApp/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommentApp/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/CommentApp/api/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CommentApp/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/CommentApp/api/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CommentApp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/CommentApp/api/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CommentApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/CommentApp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +142,7 @@
       <workItem from="1647250753384" duration="15923000" />
       <workItem from="1647331360258" duration="12219000" />
       <workItem from="1647427294899" duration="599000" />
-      <workItem from="1647456353253" duration="732000" />
+      <workItem from="1647456353253" duration="1923000" />
     </task>
     <servers />
   </component>

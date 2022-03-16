@@ -1,4 +1,4 @@
-from rest_framework.generics import ListAPIView, CreateAPIView, get_object_or_404,DestroyAPIView
+from rest_framework.generics import ListAPIView, CreateAPIView, get_object_or_404,DestroyAPIView,UpdateAPIView
 from .serializers import CommentSerializer,CreateCommentSerializer
 from CommentApp.models import ModelComment
 from .paginations import CommentPagination
@@ -29,4 +29,11 @@ class DeleteCommentView(DestroyAPIView):
     permission_classes = [IsOwner]
 
 
+class UpdateCommentView(UpdateAPIView):
+    queryset           = ModelComment.objects.all()
+    serializer_class   = CreateCommentSerializer
+    lookup_field       = "unique_id"
+    permission_classes = [IsOwner]
 
+    def perform_update(self, serializer):
+        serializer.save(user=self.request.user)

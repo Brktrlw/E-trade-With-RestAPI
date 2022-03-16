@@ -13,6 +13,7 @@ class CommentSerializer(serializers.ModelSerializer):
         model=ModelComment
         fields=("user","comment","url","createdDate","modifiedDate")
 
+
 class CreateCommentSerializer(serializers.ModelSerializer):
     class Meta:
         model  = ModelComment

@@ -10,8 +10,9 @@ urlpatterns = [
     path("api/products/",include("ProductsApp.api.urls",namespace="products")),
     path("api/carts/",include("CartApp.api.urls",namespace="carts")),
     path("api/comments/", include("CommentApp.api.urls", namespace="comments")),
+    path("api/user/",include("UserApp.api.urls",namespace="users")),
 
-    # For JWT
+    # For User Authentication (JWT)
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]
