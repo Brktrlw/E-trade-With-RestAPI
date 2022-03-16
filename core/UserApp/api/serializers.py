@@ -45,3 +45,9 @@ class RegisterUserSerializer(serializers.ModelSerializer):
         user.save()
 
         return user
+
+
+class DeleteUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model  = ModelUser
+        fields = ("username",)
