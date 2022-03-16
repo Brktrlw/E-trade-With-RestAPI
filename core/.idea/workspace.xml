@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="91c9dc9e-3d0f-4ff8-89de-054339761953" name="Changes" comment="" />
+    <list default="true" id="91c9dc9e-3d0f-4ff8-89de-054339761953" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommentApp/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/CommentApp/api/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommentApp/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/CommentApp/api/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommentApp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/CommentApp/api/views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -134,7 +139,9 @@
       <workItem from="1647245635502" duration="858000" />
       <workItem from="1647250113774" duration="364000" />
       <workItem from="1647250753384" duration="15923000" />
-      <workItem from="1647331360258" duration="12086000" />
+      <workItem from="1647331360258" duration="12219000" />
+      <workItem from="1647427294899" duration="599000" />
+      <workItem from="1647456353253" duration="292000" />
     </task>
     <servers />
   </component>
