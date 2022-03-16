@@ -6,6 +6,7 @@
       <change beforePath="$PROJECT_DIR$/UserApp/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/UserApp/api/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserApp/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/UserApp/api/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserApp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/UserApp/api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +142,7 @@
       <workItem from="1647250753384" duration="15923000" />
       <workItem from="1647331360258" duration="12219000" />
       <workItem from="1647427294899" duration="599000" />
-      <workItem from="1647456353253" duration="2470000" />
+      <workItem from="1647456353253" duration="2842000" />
     </task>
     <servers />
   </component>
