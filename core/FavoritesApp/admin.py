@@ -3,8 +3,8 @@ from FavoritesApp.models import ModelFavorite
 
 
 @admin.register(ModelFavorite)
-class AdminProduct(admin.ModelAdmin):
-    list_display       = ["user","product"]
+class AdminFavorite(admin.ModelAdmin):
+    list_display       = ["user","product","createdDate"]
     list_display_links = ["user","product"]
     search_fields      = ["user"]
     list_filter        = ["product"]

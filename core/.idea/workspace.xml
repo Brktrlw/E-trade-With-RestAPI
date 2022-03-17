@@ -5,6 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FavoritesApp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/FavoritesApp/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FavoritesApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/FavoritesApp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +144,7 @@
       <workItem from="1647427294899" duration="599000" />
       <workItem from="1647456353253" duration="3474000" />
       <workItem from="1647513404493" duration="115000" />
-      <workItem from="1647515456448" duration="1279000" />
+      <workItem from="1647515456448" duration="1629000" />
     </task>
     <servers />
   </component>

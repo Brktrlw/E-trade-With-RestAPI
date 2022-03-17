@@ -10,5 +10,6 @@ urlpatterns = [
     path("api/carts/",include("CartApp.api.urls",namespace="carts")),
     path("api/comments/", include("CommentApp.api.urls", namespace="comments")),
     path("api/user/",include("UserApp.api.urls",namespace="users")),
+    path("api/favorites/",include("FavoritesApp.api.urls",namespace="favorites"))
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
