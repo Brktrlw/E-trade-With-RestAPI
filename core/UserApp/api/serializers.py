@@ -38,7 +38,7 @@ class RegisterUserSerializer(serializers.ModelSerializer):
             email      = validated_data['email'],
             first_name = validated_data['first_name'],
             last_name  = validated_data['last_name'],
-            avatar     = validated_data.get("avatar") # maybe blank (not required fields)
+            avatar     = validated_data.get("avatar") # maybe blank cuz not required fields
         )
 
         user.set_password(validated_data['password'])
