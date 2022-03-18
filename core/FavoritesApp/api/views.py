@@ -1,6 +1,4 @@
-from rest_framework.generics import ListAPIView, CreateAPIView, get_object_or_404
-from rest_framework.response import Response
-
+from rest_framework.generics import ListAPIView, CreateAPIView, get_object_or_404,DestroyAPIView
 from FavoritesApp.models import ModelFavorite
 from .serializers import FavoriteSerializer,CreateFavoriteSerializer
 from rest_framework.permissions import IsAuthenticated
@@ -25,6 +23,15 @@ class AddFavoriteView(CreateAPIView):
         favOBJ  = ModelFavorite.objects.filter(user=self.request.user, product=product)
         if not favOBJ:
             serializer.save(user=self.request.user)
+
+
+class DeleteFavoriteView(DestroyAPIView):
+    queryset = ModelFavorite.objects.all()
+    serializer_class = CreateFavoriteSerializer
+    lookup_field = "pk"
+
+    def get_object(self):
+        return ModelFavorite.objects.get(user=self.request.user)
 
 
 

@@ -21,3 +21,4 @@ class CreateFavoriteSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         product=ModelProduct.objects.get(slug=validated_data.get("product").get("slug"))
         return ModelFavorite.objects.create(product=product,user=validated_data.get("user"))
+
