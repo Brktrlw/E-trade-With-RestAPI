@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="91c9dc9e-3d0f-4ff8-89de-054339761953" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderApp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/OrderApp/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OrderApp/api/signals.py" beforeDir="false" afterPath="$PROJECT_DIR$/OrderApp/api/signals.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/OrderApp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/UserApp/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,12 +146,23 @@
       <workItem from="1647515456448" duration="1927000" />
       <workItem from="1647599864464" duration="15000" />
       <workItem from="1647623316739" duration="3749000" />
-      <workItem from="1647672416168" duration="4572000" />
+      <workItem from="1647672416168" duration="4835000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/core$asd.coverage" NAME="asd Coverage Results" MODIFIED="1647241732044" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

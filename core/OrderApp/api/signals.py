@@ -10,5 +10,5 @@ def whenCreateOrder(sender,instance,created,*args,**kwargs):
     cartItems = user.cart.first().items.all()
 
     for item in cartItems:
-        ModelOrderItems.objects.create(order=instance,item=item.item)
+        ModelOrderItems.objects.create(order=instance,item=item.item,amount=item.amount)
         item.delete()

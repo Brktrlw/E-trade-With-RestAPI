@@ -13,4 +13,11 @@ class AdminOrder(admin.ModelAdmin):
         model = ModelOrder
 
 
-admin.site.register(ModelOrderItems)
+@admin.register(ModelOrderItems)
+class AdminOrderItem(admin.ModelAdmin):
+    listForOrder       = ["order","item","amount"]
+    list_display       = listForOrder
+    list_display_links = listForOrder
+
+    class Meta:
+        model = ModelOrderItems
