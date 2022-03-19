@@ -2,6 +2,8 @@ from django.db import models
 from autoslug import AutoSlugField
 from django.utils.text import slugify
 from unidecode import unidecode
+from SellerApp.models import ModelSeller
+
 
 class BaseProductModel(models.Model):
     # Created a base class to avoid code duplication
@@ -40,9 +42,10 @@ class ModelProduct(BaseProductModel):
         help_text="Kategori",
         related_name="categs",
     )
-    image = models.ImageField(upload_to="Products",verbose_name="Görsel",help_text="Görsel",blank=True,null=True)
-    draft = models.BooleanField(default=True,verbose_name="Taslak",help_text="Taslak")
-    price = models.FloatField(verbose_name="Fiyat",help_text="Fiyat")
+    image  = models.ImageField(upload_to="Products",verbose_name="Görsel",help_text="Görsel",blank=True,null=True)
+    draft  = models.BooleanField(default=True,verbose_name="Taslak",help_text="Taslak")
+    price  = models.FloatField(verbose_name="Fiyat",help_text="Fiyat")
+    seller = models.ForeignKey(ModelSeller,on_delete=models.CASCADE,verbose_name="Mağaza",help_text="Mağaza",related_name="products")
 
     def __str__(self):
         return f"{self.name} | {self.slug}"

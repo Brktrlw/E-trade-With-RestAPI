@@ -7,8 +7,8 @@ from .models import ModelUser,ModelAddress
 class CustomUserAdmin(UserAdmin):
     model        = ModelUser
     fieldsets    = UserAdmin.fieldsets +(
-        ("Profil Fotoğrafı",{
-            "fields":["avatar","address"]
+        ("Extra",{
+            "fields":["avatar","address","isCustomer"]
         }),
     )
 

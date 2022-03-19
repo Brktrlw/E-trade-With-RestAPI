@@ -19,7 +19,8 @@ class CreateOrderAPIView(CreateAPIView):
 
 
 class ListOrdersAPIView(ListAPIView):
-    serializer_class = OrderListSerializer
+    serializer_class   = OrderListSerializer
+    permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
         return ModelOrder.objects.filter(user=self.request.user)
@@ -27,7 +28,8 @@ class ListOrdersAPIView(ListAPIView):
 
 class OrderItemsListAPIView(ListAPIView):
     serializer_class   = OrderItemListSerializer
-    lookup_field = "unique_id"
+    lookup_field       = "unique_id"
+    permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
         return ModelOrderItems.objects.filter(order__unique_id=self.kwargs.get("unique_id"),order__user=self.request.user)

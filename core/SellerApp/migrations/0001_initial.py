@@ -12,15 +12,15 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='ModelFavorite',
+            name='ModelSeller',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('createdDate', models.DateTimeField(auto_now_add=True, help_text='Kaydetme Tarihi', verbose_name='Kaydetme Tarihi')),
+                ('companyName', models.CharField(help_text='Şirket İsmi', max_length=150, verbose_name='Şirket İsmi')),
             ],
             options={
-                'verbose_name': 'Favorite',
-                'verbose_name_plural': 'Favorites',
-                'db_table': 'Favorites',
+                'verbose_name': 'Seller',
+                'verbose_name_plural': 'Sellers',
+                'db_table': 'Sellers',
             },
         ),
     ]

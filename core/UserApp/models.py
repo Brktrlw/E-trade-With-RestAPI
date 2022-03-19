@@ -31,6 +31,7 @@ class ModelAddress(models.Model):
 class ModelUser(AbstractUser):
     avatar     = models.ImageField(upload_to="Users",verbose_name="Profil Fotoğrafı",help_text="Profil Fotoğrafı",null=True,blank=True)
     address    = models.ManyToManyField(ModelAddress,verbose_name="Adresler",help_text="Adresler",blank=True,related_name="addrs")
+    isCustomer = models.BooleanField(default=True,verbose_name="Müşteri mi")
 
     class Meta:
         verbose_name        = "User"
@@ -40,7 +41,7 @@ class ModelUser(AbstractUser):
 
 @receiver(post_save,sender=ModelUser)
 def whenCreateUser(sender,instance,created,*args,**kwargs):
-    # When create order then create orderitem for that order
+    # When create order then create cart for that user
     if created:
         ModelCart=apps.get_model('CartApp.ModelCart')
         ModelCart.objects.create(user=instance)
