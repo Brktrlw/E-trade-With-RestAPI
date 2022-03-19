@@ -1,7 +1,9 @@
 from rest_framework import serializers
-from OrderApp.models import ModelOrder
+from OrderApp.models import ModelOrder,ModelOrderItems
 from UserApp.models import ModelAddress
 from UserApp.api.serializers import AddressSerializer
+from ProductsApp.api.serializers import ProductsSerializer
+
 
 class OrderSerializer(serializers.ModelSerializer):
     addressId=serializers.CharField(source="address.unique_id")
@@ -20,6 +22,14 @@ class OrderListSerializer(serializers.ModelSerializer):
     class Meta:
         model = ModelOrder
         fields=("createdDate","address","unique_id")
+
+
+class OrderItemListSerializer(serializers.ModelSerializer):
+    item=ProductsSerializer()
+
+    class Meta:
+        model = ModelOrderItems
+        fields=("item","amount","price")
 
 
 
