@@ -3,9 +3,7 @@ import uuid
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 import json
-from django.db.models.signals import post_save
-from django.dispatch import receiver
-from django.apps import apps
+
 
 with open('fixtures/city.json') as f:
     # Gets cities in json format and converts them to tuple format
@@ -39,11 +37,6 @@ class ModelUser(AbstractUser):
         db_table            = "Users"
 
 
-@receiver(post_save,sender=ModelUser)
-def whenCreateUser(sender,instance,created,*args,**kwargs):
-    # When create order then create cart for that user
-    if created:
-        ModelCart=apps.get_model('CartApp.ModelCart')
-        ModelCart.objects.create(user=instance)
+
 
 

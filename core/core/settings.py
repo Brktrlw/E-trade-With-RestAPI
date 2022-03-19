@@ -49,7 +49,8 @@ INSTALLED_APPS = [
     "SellerApp",
     #3rd Party Apps
     'django_cleanup',
-    "rest_framework"
+    "phonenumber_field",
+    "rest_framework",
 ]
 
 MIDDLEWARE = [

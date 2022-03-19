@@ -3,10 +3,26 @@
   <component name="ChangeListManager">
     <list default="true" id="91c9dc9e-3d0f-4ff8-89de-054339761953" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FavoritesApp/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderApp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/OrderApp/api/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductsApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProductsApp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserApp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/UserApp/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CartApp/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CartApp/migrations/0002_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CartApp/migrations/0003_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommentApp/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommentApp/migrations/0002_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommentApp/migrations/0003_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FavoritesApp/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FavoritesApp/migrations/0002_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FavoritesApp/migrations/0003_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderApp/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderApp/migrations/0002_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderApp/migrations/0003_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductsApp/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductsApp/migrations/0002_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellerApp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/SellerApp/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellerApp/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellerApp/migrations/0002_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellerApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/SellerApp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserApp/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/UserApp/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserApp/migrations/0001_initial.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/UserApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/UserApp/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/settings.py" afterDir="false" />
     </list>
@@ -150,7 +166,7 @@
       <workItem from="1647515456448" duration="1927000" />
       <workItem from="1647599864464" duration="15000" />
       <workItem from="1647623316739" duration="3749000" />
-      <workItem from="1647672416168" duration="12746000" />
+      <workItem from="1647672416168" duration="14385000" />
     </task>
     <servers />
   </component>

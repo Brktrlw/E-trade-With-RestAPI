@@ -1,3 +1,11 @@
 from django.contrib import admin
+from .models import ModelSeller
 
-# Register your models here.
+@admin.register(ModelSeller)
+class SellerAdmin(admin.ModelAdmin):
+
+    list_display       = ["user","companyName","phone"]
+    search_fields      = ["user"]
+
+    class Meta:
+        model=ModelSeller
