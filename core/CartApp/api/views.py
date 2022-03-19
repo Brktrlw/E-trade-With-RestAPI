@@ -4,7 +4,7 @@ from .serializers import CartSerializer
 from ProductsApp.models import ModelProduct
 from rest_framework.permissions import IsAuthenticated
 
-class AddProductToCartView(CreateAPIView):
+class AddProductToCartAPIView(CreateAPIView):
     queryset           = ModelCartItem.objects.all()
     serializer_class   = CartSerializer
     permission_classes = [IsAuthenticated]
@@ -21,7 +21,7 @@ class AddProductToCartView(CreateAPIView):
             serializer.save(cart=cart,item=product)
 
 
-class ReduceProductFromCartView(DestroyAPIView):
+class ReduceProductFromCartAPIView(DestroyAPIView):
     queryset         = ModelCartItem.objects.all()
     serializer_class = CartSerializer
     permission_classes = [IsAuthenticated]
@@ -41,7 +41,7 @@ class ReduceProductFromCartView(DestroyAPIView):
             cartItem.save()
 
 
-class DeleteProductFromCartView(DestroyAPIView):
+class DeleteProductFromCartAPIView(DestroyAPIView):
     queryset = ModelCartItem.objects.all()
     serializer_class = CartSerializer
     permission_classes = [IsAuthenticated]
@@ -57,7 +57,7 @@ class DeleteProductFromCartView(DestroyAPIView):
         cartItem.delete()
 
 
-class UpdateCartItemAmountView(UpdateAPIView):
+class UpdateCartItemAmountAPIView(UpdateAPIView):
 
     queryset         = ModelCartItem.objects.all()
     serializer_class = CartSerializer
