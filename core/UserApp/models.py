@@ -28,6 +28,7 @@ class ModelAddress(models.Model):
         db_table            = "Addresses"
 
 
+
 class ModelUser(AbstractUser):
     avatar     = models.ImageField(upload_to="Users",verbose_name="Profil Fotoğrafı",help_text="Profil Fotoğrafı",null=True,blank=True)
     address    = models.ManyToManyField(ModelAddress,verbose_name="Adresler",help_text="Adresler",blank=True,related_name="addrs")

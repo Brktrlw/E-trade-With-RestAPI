@@ -10,14 +10,14 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('CartApp', '0001_initial'),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
+        ('FavoritesApp', '0001_initial'),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='modelcart',
+            model_name='modelfavorite',
             name='user',
-            field=models.ForeignKey(help_text='Kullanıcı', on_delete=django.db.models.deletion.CASCADE, related_name='cart', to=settings.AUTH_USER_MODEL, verbose_name='Kullanıcı'),
+            field=models.ForeignKey(help_text='Kullanıcı', on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL, verbose_name='Kullanıcı'),
         ),
     ]

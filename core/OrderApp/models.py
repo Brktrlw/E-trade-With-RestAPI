@@ -18,8 +18,10 @@ class ModelOrder(models.Model):
         return f"{self.unique_id}"
 
 class ModelOrderItems(models.Model):
-    order = models.ForeignKey(ModelOrder,on_delete=models.CASCADE,verbose_name="Sipariş",help_text="Sipariş",related_name="items")
-    item  = models.ForeignKey(ModelProduct,on_delete=models.CASCADE,verbose_name="Ürün",help_text="Ürün")
+    order  = models.ForeignKey(ModelOrder,on_delete=models.CASCADE,verbose_name="Sipariş",help_text="Sipariş",related_name="items")
+    item   = models.ForeignKey(ModelProduct,on_delete=models.CASCADE,verbose_name="Ürün",help_text="Ürün")
+    amount = models.PositiveIntegerField(verbose_name="Adet",help_text="Adet")
+
 
     def __str__(self):
         return str(self.item.name)
