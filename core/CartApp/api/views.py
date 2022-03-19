@@ -4,6 +4,7 @@ from .serializers import CartSerializer,CartListSerializer
 from ProductsApp.models import ModelProduct
 from rest_framework.permissions import IsAuthenticated
 
+
 class AddProductToCartAPIView(CreateAPIView):
     queryset           = ModelCartItem.objects.all()
     serializer_class   = CartSerializer
@@ -86,7 +87,7 @@ class UpdateCartItemAmountAPIView(UpdateAPIView):
 class ListCartAPIView(ListAPIView):
     serializer_class   = CartListSerializer
     permission_classes = [IsAuthenticated]
-    
+
     def get_queryset(self):
         cart = ModelCart.objects.get(user=self.request.user)
         return ModelCartItem.objects.filter(cart=cart)

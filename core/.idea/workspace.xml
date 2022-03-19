@@ -3,13 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="91c9dc9e-3d0f-4ff8-89de-054339761953" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CartApp/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/CartApp/api/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CartApp/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/CartApp/api/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CartApp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/CartApp/api/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductsApp/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProductsApp/api/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellerApp/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/SellerApp/api/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellerApp/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/SellerApp/api/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellerApp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/SellerApp/api/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SellerApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/SellerApp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserApp/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/UserApp/api/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserApp/api/signals.py" beforeDir="false" afterPath="$PROJECT_DIR$/UserApp/api/signals.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +150,7 @@
       <workItem from="1647515456448" duration="1927000" />
       <workItem from="1647599864464" duration="15000" />
       <workItem from="1647623316739" duration="3749000" />
-      <workItem from="1647672416168" duration="18073000" />
+      <workItem from="1647672416168" duration="20243000" />
     </task>
     <servers />
   </component>

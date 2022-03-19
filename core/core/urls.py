@@ -11,6 +11,7 @@ urlpatterns = [
     path("api/comments/", include("CommentApp.api.urls", namespace="comments")),
     path("api/user/",include("UserApp.api.urls",namespace="users")),
     path("api/favorites/",include("FavoritesApp.api.urls",namespace="favorites")),
-    path("api/orders/",include("OrderApp.api.urls",namespace="orders"))
+    path("api/orders/",include("OrderApp.api.urls",namespace="orders")),
+    path("api/sellers/",include("SellerApp.api.urls",namespace="sellers"))
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

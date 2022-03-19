@@ -6,3 +6,13 @@ class SellerSerializer(serializers.ModelSerializer):
     class Meta:
         model = ModelSeller
         fields=("companyName",)
+
+
+class UpdateSellerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ModelSeller
+        fields=("companyName","phone","website",)
+
+
+
+
