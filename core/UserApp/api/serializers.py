@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from UserApp.models import ModelUser
+from UserApp.models import ModelUser,ModelAddress
 from rest_framework.validators import UniqueValidator
 from django.contrib.auth.password_validation import validate_password
 
@@ -45,6 +45,12 @@ class RegisterUserSerializer(serializers.ModelSerializer):
         user.save()
 
         return user
+
+
+class AddressSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=ModelAddress
+        fields=("unique_id","name","city","street","address")
 
 
 class DeleteUserSerializer(serializers.ModelSerializer):
