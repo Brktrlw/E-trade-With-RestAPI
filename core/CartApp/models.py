@@ -15,11 +15,18 @@ class ModelCart(models.Model):
         verbose_name_plural = "Carts"
         db_table            = "Cart"
 
+    def getTotalPrice(self):
+        totalPrice=0
+        prodcts=self.user.cart.first().items.all()
+        for product in prodcts:
+            totalPrice+=product.product.price
+        return totalPrice
 
 class ModelCartItem(models.Model):
     cart    = models.ForeignKey(ModelCart,on_delete=models.CASCADE,verbose_name="Sepet",help_text="Sepet",related_name="items")
     product = models.ForeignKey(ModelProduct,on_delete=models.CASCADE,verbose_name="Ürün",help_text="Ürün")
     amount  = models.IntegerField(verbose_name="Adet",help_text="Adet")
+
 
     class Meta:
         verbose_name        = "Cart Item"

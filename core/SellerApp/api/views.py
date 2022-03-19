@@ -1,4 +1,3 @@
-
 from rest_framework.generics import RetrieveUpdateAPIView
 from SellerApp.models import ModelSeller
 from .serializers import UpdateSellerSerializer

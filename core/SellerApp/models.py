@@ -2,6 +2,7 @@ from django.db import models
 from UserApp.models import ModelUser
 from phonenumber_field.modelfields import PhoneNumberField
 
+
 class ModelSeller(models.Model):
     user        = models.ForeignKey(ModelUser,on_delete = models.CASCADE,verbose_name="Kullanıcı",help_text="Kullanıcı")
     companyName = models.CharField(max_length=150,verbose_name="Şirket İsmi",help_text="Şirket İsmi",null=True)

@@ -50,6 +50,8 @@ INSTALLED_APPS = [
     #3rd Party Apps
     'django_cleanup',
     "phonenumber_field",
+    "debug_toolbar",
+    #"django.contrib.staticfiles",
     "rest_framework",
 ]
 
@@ -61,6 +63,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = 'core.urls'
@@ -147,3 +150,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL="/media/"
 MEDIA_ROOT=os.path.join(BASE_DIR,"media")
 AUTH_USER_MODEL = "UserApp.ModelUser"
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+]

@@ -2,6 +2,8 @@ from rest_framework.generics import CreateAPIView,ListAPIView
 from OrderApp.models import ModelOrder,ModelOrderItems
 from .serializers import OrderSerializer,OrderListSerializer,OrderItemListSerializer
 from rest_framework.permissions import IsAuthenticated
+from fixtures.bank import Payment
+from django.http import JsonResponse
 
 
 class CreateOrderAPIView(CreateAPIView):
@@ -12,10 +14,28 @@ class CreateOrderAPIView(CreateAPIView):
     def perform_create(self, serializer):
         user        = self.request.user
         if user.cart.first().items.all():
-            serializer.save(user=user)
+            # For PAYMENT
+            totalPrice = user.cart.first().getTotalPrice()
+            firstName  = serializer.validated_data.get("payment").get("firstName")
+            lastName   = serializer.validated_data.get("payment").get("lastName")
+            cardNumber = serializer.validated_data.get("payment").get("cardNumber")
+            CVV        = serializer.validated_data.get("payment").get("CVV")
+            month      = serializer.validated_data.get("payment").get("month")
+            year       = serializer.validated_data.get("payment").get("year")
+
+            checkPayment = Payment(firstName,lastName,cardNumber,CVV,month,year,totalPrice)
+
+            if checkPayment:
+                # Payment Success
+                serializer.save(user=user)
+            else:
+                # payment error
+                return ValueError({"message": "Bankanız ödemeyi onaylamadı"})
+
+
         else:
             #if cart is empty
-            raise ValueError("Cart is empty")
+            return ValueError("Sepetiniz Boş")
 
 
 class ListOrdersAPIView(ListAPIView):

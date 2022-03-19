@@ -3,11 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="91c9dc9e-3d0f-4ff8-89de-054339761953" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CartApp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/CartApp/api/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellerApp/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/SellerApp/api/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellerApp/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/SellerApp/api/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CartApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/CartApp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderApp/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/OrderApp/api/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderApp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/OrderApp/api/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SellerApp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/SellerApp/api/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SellerApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/SellerApp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,10 +42,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/fixtures" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/fixtures" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/OrderApp/api" />
       <recent name="$PROJECT_DIR$/fixtures" />
@@ -150,7 +154,7 @@
       <workItem from="1647515456448" duration="1927000" />
       <workItem from="1647599864464" duration="15000" />
       <workItem from="1647623316739" duration="3749000" />
-      <workItem from="1647672416168" duration="20243000" />
+      <workItem from="1647672416168" duration="24623000" />
     </task>
     <servers />
   </component>
