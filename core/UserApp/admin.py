@@ -15,7 +15,7 @@ class CustomUserAdmin(UserAdmin):
 
 @admin.register(ModelAddress)
 class AddressAdmin(admin.ModelAdmin):
-    panelListForUser   = ["name", "city","street"]
+    panelListForUser   = ["name","unique_id", "city","street"]
     list_display       = panelListForUser
     list_editable      = ["city"]
     search_fields      = ["name"]

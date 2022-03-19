@@ -6,13 +6,13 @@ from ProductsApp.models import ModelProduct
 from rest_framework.permissions import IsAuthenticated
 from .permissions import IsOwner
 
-class ListCommentsView(ListAPIView):
+class ListCommentsAPIView(ListAPIView):
     pagination_class = CommentPagination
     queryset         = ModelComment.objects.all()
     serializer_class = CommentSerializer
 
 
-class CreateCommentView(CreateAPIView):
+class CreateCommentAPIView(CreateAPIView):
     serializer_class   = CreateCommentSerializer
     queryset           = ModelComment.objects.all()
     permission_classes = [IsAuthenticated]
@@ -22,14 +22,14 @@ class CreateCommentView(CreateAPIView):
         serializer.save(user=self.request.user,product=product)
 
 
-class DeleteCommentView(DestroyAPIView):
+class DeleteCommentAPIView(DestroyAPIView):
     queryset           = ModelComment.objects.all()
     serializer_class   = CommentSerializer
     lookup_field       = "unique_id"
     permission_classes = [IsOwner]
 
 
-class UpdateCommentView(UpdateAPIView):
+class UpdateCommentAPIView(UpdateAPIView):
     queryset           = ModelComment.objects.all()
     serializer_class   = CreateCommentSerializer
     lookup_field       = "unique_id"

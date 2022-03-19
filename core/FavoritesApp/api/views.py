@@ -5,6 +5,7 @@ from rest_framework.permissions import IsAuthenticated
 from .paginations import FavoritePagination
 from ProductsApp.models import ModelProduct
 
+
 class ListFavoritesView(ListAPIView):
     serializer_class   = FavoriteSerializer
     permission_classes = [IsAuthenticated]
@@ -17,6 +18,7 @@ class ListFavoritesView(ListAPIView):
 class AddFavoriteView(CreateAPIView):
     queryset = ModelFavorite.objects.all()
     serializer_class = CreateFavoriteSerializer
+    permission_classes = [IsAuthenticated]
 
     def perform_create(self, serializer):
         product = get_object_or_404(ModelProduct,slug=serializer.validated_data.get("product").get("slug"))
@@ -29,6 +31,7 @@ class DeleteFavoriteView(DestroyAPIView):
     queryset = ModelFavorite.objects.all()
     serializer_class = CreateFavoriteSerializer
     lookup_field = "pk"
+    permission_classes = [IsAuthenticated]
 
     def get_object(self):
         return ModelFavorite.objects.get(user=self.request.user)
