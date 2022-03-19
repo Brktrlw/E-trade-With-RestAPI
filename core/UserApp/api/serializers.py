@@ -3,6 +3,7 @@ from UserApp.models import ModelUser,ModelAddress
 from rest_framework.validators import UniqueValidator
 from django.contrib.auth.password_validation import validate_password
 
+
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model  = ModelUser
@@ -20,7 +21,7 @@ class RegisterUserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ModelUser
-        fields = ('username', 'password', 'password2', 'email', 'first_name', 'last_name',"avatar")
+        fields = ('username', 'password', 'password2', 'email', 'first_name', 'last_name',"avatar","isCustomer")
         extra_kwargs = {
             'first_name': {'required': True},
             'last_name': {'required': True},
@@ -38,7 +39,8 @@ class RegisterUserSerializer(serializers.ModelSerializer):
             email      = validated_data['email'],
             first_name = validated_data['first_name'],
             last_name  = validated_data['last_name'],
-            avatar     = validated_data.get("avatar") # maybe blank cuz not required fields
+            avatar     = validated_data.get("avatar"), # maybe blank cuz not required fields
+            isCustomer = validated_data.get("isCustomer")
         )
 
         user.set_password(validated_data['password'])

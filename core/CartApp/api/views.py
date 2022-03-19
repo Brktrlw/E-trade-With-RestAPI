@@ -1,6 +1,6 @@
-from rest_framework.generics import CreateAPIView, get_object_or_404,DestroyAPIView,UpdateAPIView
+from rest_framework.generics import CreateAPIView, get_object_or_404,DestroyAPIView,UpdateAPIView,ListAPIView
 from CartApp.models import ModelCart,ModelCartItem
-from .serializers import CartSerializer
+from .serializers import CartSerializer,CartListSerializer
 from ProductsApp.models import ModelProduct
 from rest_framework.permissions import IsAuthenticated
 
@@ -83,6 +83,13 @@ class UpdateCartItemAmountAPIView(UpdateAPIView):
             cartItem.save()
 
 
+class ListCartAPIView(ListAPIView):
+    serializer_class   = CartListSerializer
+    permission_classes = [IsAuthenticated]
+    
+    def get_queryset(self):
+        cart = ModelCart.objects.get(user=self.request.user)
+        return ModelCartItem.objects.filter(cart=cart)
 
 
 
