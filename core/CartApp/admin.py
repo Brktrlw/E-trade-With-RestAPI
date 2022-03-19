@@ -6,10 +6,10 @@ admin.site.register(ModelCart)
 
 @admin.register(ModelCartItem)
 class AdminCartItem(admin.ModelAdmin):
-    list_display       = ["item","amount"]
-    list_display_links = ["item","amount"]
-    search_fields      = ["item"]
-    list_filter        = ["item"]
+    list_display       = ["product","amount"]
+    list_display_links = ["product","amount"]
+    search_fields      = ["product"]
+    list_filter        = ["product"]
 
     class Meta:
         model = ModelCartItem

@@ -17,9 +17,9 @@ class ModelCart(models.Model):
 
 
 class ModelCartItem(models.Model):
-    cart   = models.ForeignKey(ModelCart,on_delete=models.CASCADE,verbose_name="Sepet",help_text="Sepet",related_name="items")
-    item   = models.ForeignKey(ModelProduct,on_delete=models.CASCADE,verbose_name="Ürün",help_text="Ürün")
-    amount = models.IntegerField(verbose_name="Adet",help_text="Adet")
+    cart    = models.ForeignKey(ModelCart,on_delete=models.CASCADE,verbose_name="Sepet",help_text="Sepet",related_name="items")
+    product = models.ForeignKey(ModelProduct,on_delete=models.CASCADE,verbose_name="Ürün",help_text="Ürün")
+    amount  = models.IntegerField(verbose_name="Adet",help_text="Adet")
 
     class Meta:
         verbose_name        = "Cart Item"

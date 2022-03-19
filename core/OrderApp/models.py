@@ -21,7 +21,7 @@ class ModelOrderItems(models.Model):
     order  = models.ForeignKey(ModelOrder,on_delete=models.CASCADE,verbose_name="Sipariş",help_text="Sipariş",related_name="items")
     item   = models.ForeignKey(ModelProduct,on_delete=models.CASCADE,verbose_name="Ürün",help_text="Ürün")
     amount = models.PositiveIntegerField(verbose_name="Adet",help_text="Adet")
-
+    price  = models.PositiveIntegerField(verbose_name="Fiyat",help_text="Fiyat")
 
     def __str__(self):
         return str(self.item.name)
