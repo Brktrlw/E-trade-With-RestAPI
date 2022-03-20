@@ -1,7 +1,7 @@
 
 
-from rest_framework.throttling import AnonRateThrottle
+from rest_framework.throttling import UserRateThrottle
 
-class CommentThrottle(AnonRateThrottle):
+class CommentThrottle(UserRateThrottle):
     scope = "commentThrottle"
 
