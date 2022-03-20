@@ -4,7 +4,7 @@ from .serializers import FavoriteSerializer,CreateFavoriteSerializer
 from rest_framework.permissions import IsAuthenticated
 from .paginations import FavoritePagination
 from ProductsApp.models import ModelProduct
-
+from .throttles import FavoriteThrottle
 
 class ListFavoritesView(ListAPIView):
     serializer_class   = FavoriteSerializer
@@ -16,9 +16,10 @@ class ListFavoritesView(ListAPIView):
 
 
 class AddFavoriteView(CreateAPIView):
-    queryset = ModelFavorite.objects.all()
-    serializer_class = CreateFavoriteSerializer
+    queryset           = ModelFavorite.objects.all()
+    serializer_class   = CreateFavoriteSerializer
     permission_classes = [IsAuthenticated]
+    throttle_classes   = [FavoriteThrottle]
 
     def perform_create(self, serializer):
         product = get_object_or_404(ModelProduct,slug=serializer.validated_data.get("product").get("slug"))
@@ -28,9 +29,9 @@ class AddFavoriteView(CreateAPIView):
 
 
 class DeleteFavoriteView(DestroyAPIView):
-    queryset = ModelFavorite.objects.all()
-    serializer_class = CreateFavoriteSerializer
-    lookup_field = "pk"
+    queryset           = ModelFavorite.objects.all()
+    serializer_class   = CreateFavoriteSerializer
+    lookup_field       = "pk"
     permission_classes = [IsAuthenticated]
 
     def get_object(self):

@@ -145,6 +145,7 @@ REST_FRAMEWORK = {
     'DEFAULT_THROTTLE_RATES': {
         'commentThrottle': '10/hour',
         "registerThrottle":"3/hour",
+        "favoriteThrottle":"20/min"
     }
 
 }
