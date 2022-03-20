@@ -143,7 +143,7 @@ REST_FRAMEWORK = {
     )
 }
 SIMPLE_JWT={
-   'ACCESS_TOKEN_LIFETIME':timedelta(minutes=15)
+   'ACCESS_TOKEN_LIFETIME':timedelta(days=15)
 }
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

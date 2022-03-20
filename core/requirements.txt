@@ -3,8 +3,12 @@ backports.zoneinfo==0.2.1
 Django==4.0.3
 django-autoslug==1.9.8
 django-cleanup==6.0.0
+django-debug-toolbar==3.2.4
+django-phonenumber-field==6.1.0
 djangorestframework==3.13.1
 djangorestframework-simplejwt==5.1.0
+phonenumbers==8.12.45
+phonenumberslite==8.12.45
 Pillow==9.0.1
 PyJWT==2.3.0
 pytz==2021.3

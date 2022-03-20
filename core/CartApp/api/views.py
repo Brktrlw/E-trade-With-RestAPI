@@ -14,12 +14,12 @@ class AddProductToCartAPIView(CreateAPIView):
         #If there is the same product in the cart of customer , then increase amount.
         cart    = get_object_or_404(ModelCart,user=self.request.user)
         product = get_object_or_404(ModelProduct,slug=self.kwargs.get("slug"),draft=False)
-        cartItem= ModelCartItem.objects.filter(cart=cart,item=product)
+        cartItem= ModelCartItem.objects.filter(cart=cart,product=product)
         if cartItem:
             cartItem[0].amount=cartItem[0].amount+serializer.validated_data.get("amount")
             cartItem[0].save()
         else:
-            serializer.save(cart=cart,item=product)
+            serializer.save(cart=cart,product=product)
 
 
 class ReduceProductFromCartAPIView(DestroyAPIView):
@@ -34,7 +34,7 @@ class ReduceProductFromCartAPIView(DestroyAPIView):
     def perform_destroy(self, instance):
         cart     = get_object_or_404(ModelCart,user=self.request.user)
         product  = self.get_object()
-        cartItem = get_object_or_404(ModelCartItem,cart=cart, item=product)
+        cartItem = get_object_or_404(ModelCartItem,cart=cart, product=product)
         if cartItem.amount==1:
             cartItem.delete()
         else:
@@ -54,7 +54,7 @@ class DeleteProductFromCartAPIView(DestroyAPIView):
     def perform_destroy(self, instance):
         cart     = get_object_or_404(ModelCart,user=self.request.user)
         product  = self.get_object()
-        cartItem = get_object_or_404(ModelCartItem,cart=cart, item=product)
+        cartItem = get_object_or_404(ModelCartItem,cart=cart, product=product)
         cartItem.delete()
 
 
@@ -66,11 +66,12 @@ class UpdateCartItemAmountAPIView(UpdateAPIView):
     def get_cart_product_cartItem(self):
         cart     = get_object_or_404(ModelCart, user=self.request.user)
         product  = get_object_or_404(ModelProduct, slug=self.kwargs.get("slug"))
-        cartItem = get_object_or_404(ModelCartItem, cart=cart, item=product)
+        cartItem = get_object_or_404(ModelCartItem, cart=cart, product=product)
         return {"cart":cart,"product":product,"cartItem":cartItem}
 
     def get_object(self):
         return self.get_cart_product_cartItem().get("cartItem")
+
 
     def perform_update(self, serializer):
         cartItem = self.get_cart_product_cartItem().get("cartItem")

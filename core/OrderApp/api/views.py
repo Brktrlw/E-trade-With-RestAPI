@@ -29,10 +29,8 @@ class CreateOrderAPIView(CreateAPIView):
                 # Payment Success
                 serializer.save(user=user)
             else:
-                # payment error
-                return ValueError({"message": "Bankanız ödemeyi onaylamadı"})
-
-
+                # Payment error
+                return ValueError("Bankanız ödemeyi onaylamadı")
         else:
             #if cart is empty
             return ValueError("Sepetiniz Boş")
