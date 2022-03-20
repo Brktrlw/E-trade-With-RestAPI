@@ -3,7 +3,6 @@ from OrderApp.models import ModelOrder,ModelOrderItems
 from .serializers import OrderSerializer,OrderListSerializer,OrderItemListSerializer
 from rest_framework.permissions import IsAuthenticated
 from fixtures.bank import Payment
-from django.http import JsonResponse
 
 
 class CreateOrderAPIView(CreateAPIView):
