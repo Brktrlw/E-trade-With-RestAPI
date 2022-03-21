@@ -109,6 +109,45 @@ http://127.0.0.1/api/user/
 |` POST /refresh/` | Refresh Token | refresh ||
 |` DEL /delete/` | User Delete |  || X
 
+#### Favorites System
+
+```http
+http://127.0.0.1/api/favorites/
+```
+
+| API | Description | Parameters | Auth|
+|:-------- |  :------ |:------------------------------------------- |:--
+|` GET /list/` | List favorites' product of user | |X |
+|` POST /add/` | Add product to Favorites |productSlug |X|
+|` POST /delete/<favoriteObjectPK>` | Delete product from Favorites |  |X|
+
+#### Product System
+
+```http
+http://127.0.0.1/api/products/
+```
+
+| API | Description | Parameters | Auth|
+|:-------- |  :------ |:------------------------------------------- |:--
+|` GET /all/` | List all products  | | |
+|` GET /cat/<categorySlug>` | List product by category | ||
+|` GET /detail/<productSlug>` | Detail product page |  ||
+|` POST /create/` | Create product  | name,description,price,category,draft |X|
+|` DEL /delete/<productSlug>` | Delete product |  |X|
+|` PUT /detail/<productSlug>` | Update product  |name,description,price,category,draft|X|
+
+#### Seller System
+
+```http
+127.0.0.1/api/sellers/
+```
+
+| API | Description | Parameters | Auth|
+|:-------- |  :------ |:------------------------------------------- |:--
+|` GET /update/` | List seller profile data  | | X|
+|` PUT /update/` | List product by category |companyName,phone,website |X|
+
+
 ## Feedback
 
 If you have any feedback, please reach out to us at berkaygithub@protonmail.ch
