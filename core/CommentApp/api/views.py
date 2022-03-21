@@ -4,8 +4,9 @@ from CommentApp.models import ModelComment
 from .paginations import CommentPagination
 from ProductsApp.models import ModelProduct
 from rest_framework.permissions import IsAuthenticated
-from .permissions import IsOwner
+from .permissions import IsOwner,IsAnyOrder
 from .throttles import CommentThrottle
+
 
 class ListCommentsAPIView(ListAPIView):
     pagination_class = CommentPagination
@@ -16,7 +17,7 @@ class ListCommentsAPIView(ListAPIView):
 class CreateCommentAPIView(CreateAPIView):
     serializer_class   = CreateCommentSerializer
     queryset           = ModelComment.objects.all()
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAnyOrder]
     throttle_classes   = [CommentThrottle]
 
     def perform_create(self, serializer):

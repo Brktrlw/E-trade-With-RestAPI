@@ -5,6 +5,17 @@ from rest_framework.permissions import IsAuthenticated
 from fixtures.bank import Payment
 
 
+def validateCreditCard(cardNumber,CVV,month,year):
+    yearList  = [_year for _year in range(2022,2050)]
+    monthList = [_month for _month in range(1,13)]
+    if not year in yearList or month not in monthList:
+        return False
+    elif len(cardNumber.replace(" ",""))!=16:
+        return False
+    elif not CVV.isdigit():
+        return False
+    return True
+
 class CreateOrderAPIView(CreateAPIView):
     queryset           = ModelOrder.objects.all()
     serializer_class   = OrderSerializer
@@ -22,14 +33,17 @@ class CreateOrderAPIView(CreateAPIView):
             month      = serializer.validated_data.get("payment").get("month")
             year       = serializer.validated_data.get("payment").get("year")
 
-            checkPayment = Payment(firstName,lastName,cardNumber,CVV,month,year,totalPrice)
+            if validateCreditCard(cardNumber,CVV,month,year):
+                checkPayment = Payment(firstName,lastName,cardNumber,CVV,month,year,totalPrice)
 
-            if checkPayment:
-                # Payment Success
-                serializer.save(user=user)
+                if checkPayment:
+                    # Payment Success
+                    serializer.save(user=user)
+                else:
+                    # Payment error
+                    return ValueError("Bankanız ödemeyi onaylamadı")
             else:
-                # Payment error
-                return ValueError("Bankanız ödemeyi onaylamadı")
+                return ValueError("Geçersiz Kredi Kartı Bilgileri")
         else:
             #if cart is empty
             return ValueError("Sepetiniz Boş")

@@ -72,7 +72,6 @@ class UpdateCartItemAmountAPIView(UpdateAPIView):
     def get_object(self):
         return self.get_cart_product_cartItem().get("cartItem")
 
-
     def perform_update(self, serializer):
         cartItem = self.get_cart_product_cartItem().get("cartItem")
 
