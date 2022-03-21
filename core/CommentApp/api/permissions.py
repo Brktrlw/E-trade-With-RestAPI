@@ -15,6 +15,7 @@ class IsAnyOrder(BasePermission):
     message = "Ürünü satın almadığınız için yorum yapamazsınız."
 
     def has_permission(self, request, view):
+
         product  = get_object_or_404(ModelProduct,slug=view.kwargs.get("slug"))
         try:
             order  = ModelOrder.objects.get(user=request.user)

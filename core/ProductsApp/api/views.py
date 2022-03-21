@@ -1,9 +1,13 @@
+import json
+
 from rest_framework.generics import (
     ListAPIView,RetrieveAPIView,CreateAPIView,
     DestroyAPIView,RetrieveUpdateAPIView)
 from ProductsApp.models import ModelProduct
 from .serializers import ProductsSerializer,CreateUpdateProductSerializer
-
+from SellerApp.models import ModelSeller
+from rest_framework.permissions import IsAuthenticated
+from django.http import JsonResponse,HttpResponse
 
 class AllProductListView(ListAPIView):
     # Lists all products randomly
@@ -29,7 +33,15 @@ class DetailProductView(RetrieveAPIView):
 class CreateProductView(CreateAPIView):
     queryset         = ModelProduct.objects.all()
     serializer_class = CreateUpdateProductSerializer
+    permission_classes = [IsAuthenticated]
 
+    def perform_create(self, serializer):
+        seller=ModelSeller.objects.filter(user=self.request.user)
+        if not seller:
+            return JsonResponse({"message":"Satış yapmanız için firma hesabı açmalısınız."},status=403)
+        else:
+            serializer.save(seller=seller[0])
+    
 
 class DeleteProductView(DestroyAPIView):
     queryset         = ModelProduct.objects.all()

@@ -3,7 +3,6 @@ from .serializers import CommentSerializer,CreateCommentSerializer
 from CommentApp.models import ModelComment
 from .paginations import CommentPagination
 from ProductsApp.models import ModelProduct
-from rest_framework.permissions import IsAuthenticated
 from .permissions import IsOwner,IsAnyOrder
 from .throttles import CommentThrottle
 
