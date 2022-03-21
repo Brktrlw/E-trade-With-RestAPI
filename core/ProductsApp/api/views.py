@@ -1,5 +1,3 @@
-import json
-
 from rest_framework.generics import (
     ListAPIView,RetrieveAPIView,CreateAPIView,
     DestroyAPIView,RetrieveUpdateAPIView)
@@ -7,7 +5,8 @@ from ProductsApp.models import ModelProduct
 from .serializers import ProductsSerializer,CreateUpdateProductSerializer
 from SellerApp.models import ModelSeller
 from rest_framework.permissions import IsAuthenticated
-from django.http import JsonResponse,HttpResponse
+from django.http import JsonResponse
+
 
 class AllProductListView(ListAPIView):
     # Lists all products randomly
@@ -41,7 +40,7 @@ class CreateProductView(CreateAPIView):
             return JsonResponse({"message":"Satış yapmanız için firma hesabı açmalısınız."},status=403)
         else:
             serializer.save(seller=seller[0])
-    
+
 
 class DeleteProductView(DestroyAPIView):
     queryset         = ModelProduct.objects.all()

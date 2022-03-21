@@ -1,8 +1,9 @@
 import uuid
-
 from django.db import models
 from UserApp.models import ModelUser
 from ProductsApp.models import ModelProduct
+from django.utils.encoding import smart_str
+
 
 class ModelComment(models.Model):
     unique_id    = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
@@ -13,7 +14,7 @@ class ModelComment(models.Model):
     modifiedDate = models.DateTimeField(auto_now=True,verbose_name="Düzenleme Tarihi",help_text="Düzenleme Tarihi")
 
     def __str__(self):
-        return f"{self.user} | {self.comment}"
+        return smart_str(f"{self.user} | {self.comment}")
 
     class Meta:
         verbose_name        = "Comment"

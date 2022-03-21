@@ -59,7 +59,6 @@ class DeleteProductFromCartAPIView(DestroyAPIView):
 
 
 class UpdateCartItemAmountAPIView(UpdateAPIView):
-
     queryset         = ModelCartItem.objects.all()
     serializer_class = CartSerializer
 
