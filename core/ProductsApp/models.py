@@ -4,7 +4,6 @@ from django.utils.text import slugify
 from unidecode import unidecode
 from SellerApp.models import ModelSeller
 
-
 class BaseProductModel(models.Model):
     # Created a base class to avoid code duplication
     name = models.CharField(max_length=200)

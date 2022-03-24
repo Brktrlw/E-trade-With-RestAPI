@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import ModelComment
 
+
 @admin.register(ModelComment)
 class AdminComment(admin.ModelAdmin):
     readonly_fields    = ["unique_id","createdDate","modifiedDate"]

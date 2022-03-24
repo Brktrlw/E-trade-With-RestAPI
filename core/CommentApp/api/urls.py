@@ -2,7 +2,6 @@
 from django.urls import path
 from .views import ListCommentsAPIView,CreateCommentAPIView,DeleteCommentAPIView,UpdateCommentAPIView
 
-
 app_name="comments"
 urlpatterns = [
     path("list/<slug>",ListCommentsAPIView.as_view(),name="url_listcomment"),
