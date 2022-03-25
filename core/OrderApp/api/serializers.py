@@ -8,19 +8,18 @@ import json
 
 with open('fixtures/cardMonth.json') as f:
     months = json.load(f)
-months = [(k, v) for k, v in months.items()]
+MONTHS = [(k, v) for k, v in months.items()]
 
-with open('fixtures/cardYear.json') as file:
-    years = json.load(file)
-years = [(key, value) for key, value in years.items()]
+YEARS = [year for year in range(2022,2045)]
+
 
 class CreditCardSerializer(serializers.Serializer):
     firstName  = serializers.CharField(max_length=200,required=True)
     lastName   = serializers.CharField(max_length=200,required=True)
     cardNumber = serializers.CharField(max_length=16,required=True)
     CVV        = serializers.CharField(max_length=4,required=True)
-    month      = serializers.ChoiceField(required=True,choices=months)
-    year       = serializers.ChoiceField(required=True,choices=years)
+    month      = serializers.ChoiceField(required=True,choices=MONTHS)
+    year       = serializers.ChoiceField(required=True,choices=YEARS)
 
 class OrderSerializer(serializers.ModelSerializer):
     addressId = serializers.CharField(source="address.unique_id")
