@@ -52,6 +52,8 @@ INSTALLED_APPS = [
     "phonenumber_field",
     "debug_toolbar",
     #"django.contrib.staticfiles",
+    "django_celery_beat",
+    "django_celery_results",
     "rest_framework",
 ]
 
@@ -172,3 +174,10 @@ LANGUAGES = [
     ('tr', 'Turkish'),
 ]
 LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale/')]
+
+CELERY_BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = TIME_ZONE
