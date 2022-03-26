@@ -3,6 +3,7 @@ from CartApp.models import ModelCart,ModelCartItem
 from .serializers import CartSerializer,CartListSerializer
 from ProductsApp.models import ModelProduct
 from rest_framework.permissions import IsAuthenticated
+from UserApp.tasks import add
 
 
 class AddProductToCartAPIView(CreateAPIView):
@@ -89,6 +90,7 @@ class ListCartAPIView(ListAPIView):
 
     def get_queryset(self):
         cart = ModelCart.objects.get(user=self.request.user)
+        add()
         return ModelCartItem.objects.filter(cart=cart)
 
 
