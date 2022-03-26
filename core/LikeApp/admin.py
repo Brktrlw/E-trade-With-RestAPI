@@ -1,3 +1,4 @@
 from django.contrib import admin
+from LikeApp.models import CommentLikeModel
 
-# Register your models here.
+admin.site.register(CommentLikeModel)

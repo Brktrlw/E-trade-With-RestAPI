@@ -5,7 +5,7 @@ from .views import ListCommentLikes
 
 app_name="commentlikes"
 urlpatterns = [
-    path("comment/<comment_id>",ListCommentLikes.as_view(),name="url_listCommentLikes")
+    path("comment/<unique_id>",ListCommentLikes.as_view(),name="url_listCommentLikes")
 
 
 ]
