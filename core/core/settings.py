@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "OrderApp",
     "CartApp",
     "FavoritesApp",
+    "LikeApp",
     "SellerApp",
     #3rd Party Apps
     'django_cleanup',
