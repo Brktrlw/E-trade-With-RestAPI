@@ -15,7 +15,7 @@ app.conf.beat_schedule = {
     'add-every-30-seconds': {
         'task': 'deleteOrder',
         'schedule': 5.0,
-        'args': (16, 16)
+
     },
 }
 
