@@ -1,5 +1,3 @@
-
-
 from django.urls import path
 from .views import (AllProductListView,ListProductByCategory,
                     DetailProductView,CreateProductView,

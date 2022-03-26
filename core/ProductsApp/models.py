@@ -22,7 +22,6 @@ class ModelProductCategory(BaseProductModel):
         nameField.verbose_name = 'Kategori Adı'
         nameField.help_text    = "Kategori Adı"
 
-
     def __str__(self):
         return self.name
 
