@@ -41,10 +41,11 @@ class ModelProduct(BaseProductModel):
         help_text="Kategori",
         related_name="categs",
     )
-    image  = models.ImageField(upload_to="Products",verbose_name="Görsel",help_text="Görsel",blank=True,null=True)
-    draft  = models.BooleanField(default=True,verbose_name="Taslak",help_text="Taslak")
-    price  = models.FloatField(verbose_name="Fiyat",help_text="Fiyat")
-    seller = models.ForeignKey(ModelSeller,on_delete=models.CASCADE,verbose_name="Mağaza",help_text="Mağaza",related_name="products")
+    image    = models.ImageField(upload_to="Products",verbose_name="Görsel",help_text="Görsel",blank=True,null=True)
+    draft    = models.BooleanField(default=True,verbose_name="Taslak",help_text="Taslak")
+    price    = models.FloatField(verbose_name="Fiyat",help_text="Fiyat")
+    seller   = models.ForeignKey(ModelSeller,on_delete=models.CASCADE,verbose_name="Mağaza",help_text="Mağaza",related_name="products")
+    shipping = models.BooleanField(default=True,verbose_name="Kargo",help_text="Kargo")
 
     def __str__(self):
         return f"{self.name} | {self.slug}"

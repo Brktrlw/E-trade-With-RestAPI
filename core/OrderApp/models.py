@@ -3,6 +3,7 @@ from django.db import models
 from UserApp.models import ModelUser,ModelAddress
 from ProductsApp.models import ModelProduct
 
+
 class ModelOrder(models.Model):
     user        = models.ForeignKey(ModelUser,on_delete=models.CASCADE,verbose_name="Kullanıcı",help_text="Kullanıcı",related_name="orders")
     createdDate = models.DateTimeField(auto_now_add=True,verbose_name="Sipariş Tarihi",help_text="Sipariş Tarihi")
@@ -14,8 +15,10 @@ class ModelOrder(models.Model):
         verbose_name="Order"
         verbose_name_plural="Orders"
 
+
     def __str__(self):
         return f"{self.unique_id}"
+
 
 class ModelOrderItems(models.Model):
     order  = models.ForeignKey(ModelOrder,on_delete=models.CASCADE,verbose_name="Sipariş",help_text="Sipariş",related_name="items")
