@@ -1,7 +1,9 @@
 from LikeApp.models import CommentLikeModel
-from rest_framework.generics import ListAPIView,CreateAPIView
+from rest_framework.generics import ListAPIView,CreateAPIView,DestroyAPIView
 from .serializers import CommentLikesSerializer,CreateCommentLikeSerializer
 from rest_framework.permissions import IsAuthenticated
+from .permissions import IsOwner
+
 
 class ListCommentLikesAPIView(ListAPIView):
     serializer_class = CommentLikesSerializer
@@ -16,4 +18,10 @@ class CreateCommentLikeAPIView(CreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
+
+
+class DeleteCommentLikeAPIView(DestroyAPIView):
+    serializer_class = ""
+    permission_classes = [IsOwner]
+    lookup_field = "pk"
 

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="91c9dc9e-3d0f-4ff8-89de-054339761953" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FavoritesApp/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/FavoritesApp/api/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LikeApp/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/LikeApp/api/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LikeApp/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/LikeApp/api/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LikeApp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/LikeApp/api/views.py" afterDir="false" />
@@ -209,7 +210,8 @@
       <workItem from="1648280226053" duration="11440000" />
       <workItem from="1648299095000" duration="50000" />
       <workItem from="1648302615190" duration="4273000" />
-      <workItem from="1648310380704" duration="6201000" />
+      <workItem from="1648310380704" duration="7086000" />
+      <workItem from="1648403378269" duration="322000" />
     </task>
     <servers />
   </component>
