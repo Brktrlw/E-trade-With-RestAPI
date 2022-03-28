@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91c9dc9e-3d0f-4ff8-89de-054339761953" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/20cef75d-fbfd-4738-b221-945933a04b29.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/20cef75d-fbfd-4738-b221-945933a04b29.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CartApp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/CartApp/api/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LikeApp/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/LikeApp/api/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LikeApp/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/LikeApp/api/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LikeApp/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/LikeApp/api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/base.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,11 +45,11 @@
       <recent name="$PROJECT_DIR$/fixtures" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/settings" />
       <recent name="$PROJECT_DIR$/LikeApp/api" />
       <recent name="$PROJECT_DIR$/LikeApp/" />
       <recent name="$PROJECT_DIR$/core" />
       <recent name="$PROJECT_DIR$/" />
-      <recent name="$PROJECT_DIR$/OrderApp/api" />
     </key>
   </component>
   <component name="RunManager" selected="Python.test">
@@ -213,7 +210,7 @@
       <workItem from="1648302615190" duration="4273000" />
       <workItem from="1648310380704" duration="7086000" />
       <workItem from="1648403378269" duration="1272000" />
-      <workItem from="1648453989059" duration="1022000" />
+      <workItem from="1648453989059" duration="1686000" />
     </task>
     <servers />
   </component>
