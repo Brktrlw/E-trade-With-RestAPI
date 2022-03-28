@@ -3,10 +3,11 @@ from rest_framework.generics import ListAPIView,CreateAPIView,DestroyAPIView
 from .serializers import CommentLikesSerializer,CreateDeleteCommentLikeSerializer
 from rest_framework.permissions import IsAuthenticated
 from .permissions import IsOwner
-
+from .paginations import CommentLikePagination
 
 class ListCommentLikesAPIView(ListAPIView):
     serializer_class = CommentLikesSerializer
+    pagination_class = CommentLikePagination
     def get_queryset(self):
         return CommentLikeModel.objects.filter(comment__unique_id=self.kwargs.get("unique_id"))
 

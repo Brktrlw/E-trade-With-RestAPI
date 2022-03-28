@@ -13,5 +13,5 @@ urlpatterns = [
     # FOR CRUD
     path("create/",CreateProductView.as_view(),name="url_productCreate"),
     path("delete/<slug>",DeleteProductView.as_view(),name="url_productDelete"),
-    path("update/<slug>",UpdateProductView.as_view(),name="url_productUpdate")
+    path("update/<slug>",UpdateProductView.as_view(),name="url_productUpdate"),
 ]
