@@ -139,7 +139,7 @@ http://127.0.0.1/api/products/
 #### Seller System
 
 ```http
-127.0.0.1/api/sellers/
+http://127.0.0.1/api/sellers/
 ```
 
 | API | Description | Parameters | Auth|
@@ -147,6 +147,18 @@ http://127.0.0.1/api/products/
 |` GET /update/` | List seller profile data  | | X|
 |` PUT /update/` | List product by category |companyName,phone,website |X|
 
+
+#### Comment Like System
+
+```http
+http://127.0.0.1/api/likes/
+```
+
+| API | Description | Parameters | Auth|
+|:-------- |  :------ |:------------------------------------------- |:--
+|` GET /commentlike/list/<unique_id>` | List likes of comment | | |
+|` POST /commentlike/create` | Like a comment | unique_id |X|
+|` DEL /commentlike/delete/<pk>` | Delete like from comment | |X|
 
 ## Feedback
 
