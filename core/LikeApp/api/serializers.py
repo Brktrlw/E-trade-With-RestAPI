@@ -12,7 +12,7 @@ class CommentLikesSerializer(serializers.ModelSerializer):
         fields=("user",)
 
 
-class CreateCommentLikeSerializer(serializers.ModelSerializer):
+class CreateDeleteCommentLikeSerializer(serializers.ModelSerializer):
     unique_id = serializers.CharField(source="comment.unique_id")
     class Meta:
         model=CommentLikeModel

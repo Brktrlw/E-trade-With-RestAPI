@@ -3,7 +3,7 @@ from CartApp.models import ModelCart,ModelCartItem
 from .serializers import CartSerializer,CartListSerializer
 from ProductsApp.models import ModelProduct
 from rest_framework.permissions import IsAuthenticated
-
+from .permissions import IsOwner
 
 class AddProductToCartAPIView(CreateAPIView):
     queryset           = ModelCartItem.objects.all()
@@ -45,7 +45,7 @@ class ReduceProductFromCartAPIView(DestroyAPIView):
 class DeleteProductFromCartAPIView(DestroyAPIView):
     queryset = ModelCartItem.objects.all()
     serializer_class = CartSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsOwner]
 
     def get_object(self):
         product = get_object_or_404(ModelProduct, slug=self.kwargs.get("slug"),draft=False)
@@ -59,9 +59,10 @@ class DeleteProductFromCartAPIView(DestroyAPIView):
 
 
 class UpdateCartItemAmountAPIView(UpdateAPIView):
-    queryset         = ModelCartItem.objects.all()
-    serializer_class = CartSerializer
-
+    queryset           = ModelCartItem.objects.all()
+    serializer_class   = CartSerializer
+    permission_classes = [IsOwner]
+    
     def get_cart_product_cartItem(self):
         cart     = get_object_or_404(ModelCart, user=self.request.user)
         product  = get_object_or_404(ModelProduct, slug=self.kwargs.get("slug"))
