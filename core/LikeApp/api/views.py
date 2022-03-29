@@ -5,6 +5,7 @@ from rest_framework.permissions import IsAuthenticated
 from .permissions import IsOwner
 from .paginations import CommentLikePagination
 
+
 class ListCommentLikesAPIView(ListAPIView):
     serializer_class = CommentLikesSerializer
     pagination_class = CommentLikePagination

@@ -19,3 +19,5 @@ class DeleteUserView(DestroyAPIView):
 
     def get_object(self):
         return self.request.user
+
+

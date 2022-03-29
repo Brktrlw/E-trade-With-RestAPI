@@ -8,6 +8,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('__debug__/', include('debug_toolbar.urls')),
+
+    # FOR API'S
     path("api/products/",include("ProductsApp.api.urls",namespace="products")),
     path("api/carts/",include("CartApp.api.urls",namespace="carts")),
     path("api/comments/", include("CommentApp.api.urls", namespace="comments")),
@@ -15,6 +17,7 @@ urlpatterns = [
     path("api/favorites/",include("FavoritesApp.api.urls",namespace="favorites")),
     path("api/orders/",include("OrderApp.api.urls",namespace="orders")),
     path("api/sellers/",include("SellerApp.api.urls",namespace="sellers")),
-    path("api/likes/",include("LikeApp.api.urls",namespace="commentlikes"))
+    path("api/likes/",include("LikeApp.api.urls",namespace="commentlikes")),
+
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
